@@ -37,10 +37,10 @@ class Customer(models.Model):
         return f"{self.username}({self.customer_id})"
 
 
-class Menu(models.Model):
-    pizza_id = models.PositiveIntegerField(primary_key=True)
-    pizza_name = models.CharField(max_length=64)
-    pizza_price = models.PositiveIntegerField()
+# class Menu(models.Model):
+#     pizza_id = models.PositiveIntegerField(primary_key=True)
+#     pizza_name = models.CharField(max_length=64)
+#     pizza_price = models.PositiveIntegerField()
 
-    def __str__(self):
-        return f"{self.item_name} @ Rs{self.item_price}.00/-"
+#     def __str__(self):
+#         return f"{self.item_name} @ Rs{self.item_price}.00/-"

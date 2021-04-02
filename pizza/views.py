@@ -39,7 +39,7 @@ class AdminUpdatePizza(LoginRequiredMixin, UpdateView):
     from_class = PizzaCreate
     fields = '__all__'
 
-class Confirmpage(DetailView):
+class Confirmpage(LoginRequiredMixin, DetailView):
     model = Topping
     template_name = 'confirm.html'
 
