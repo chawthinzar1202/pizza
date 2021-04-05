@@ -10,7 +10,9 @@ from .views import (
     Confirmpage, 
     DeletePizza,
     Buypage,
+    
 )
+
 
 urlpatterns = [
     path('', Homepage.as_view(), name = 'home'),
@@ -22,4 +24,5 @@ urlpatterns = [
     path('<int:pk>/confirm/', Confirmpage.as_view(), name = 'confirm'),
     path('<int:pk>/delete/', DeletePizza.as_view(), name = 'delete'),
     path('<int:pk>/confirm/buy/', Buypage.as_view(), name = 'buy'),
+    # path('<int:pk>/buy/order_detail/', OrderDetail.as_view(), name = 'orderdetail'),
 ]

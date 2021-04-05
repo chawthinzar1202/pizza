@@ -2,7 +2,64 @@
 
 {% block content %}
 
+<h2 style="color:rgb(32, 161, 6);">Order List</h2><br>
+<!-- <h3 class="text-success">Your {{ object.pizza }} is on the way :)</h3> -->
+
+<!-- {% for topping in topping_set.all%}
+<p>pizza name : {{ topping.pizza }}</p>
+<p>quantity : {{ topping.quantity }}</p>
+<p>price : {{ topping.price }}</p>
+{% endfor %} -->
+
+<!-- <h2 style="color:brown;">Booking Detail Information</h2><br> -->
+<table class="table">
+   <tr>
+       <th>Pizza</th>
+       <th>Quantity</th>
+       <th>Topping</th>
+       <th>Total Price</th>  
+   </tr>
+   <tr>
+       <td>{{ topping.pizza.name }}</td>
+       <td>{{ topping.quantity }}</td>
+       {% if object.cheese is True and object.onion is False and object.tomato is False%}
+        <td>Cheese</td>
+        {% endif %}
+
+        {% if object.cheese is False and object.onion is True and object.tomato is False%}
+        <td>Onion</td>
+        {% endif %}
+
+        {% if object.cheese is False and object.onion is False and object.tomato is True%}
+        <td>Tomato</td>
+        {% endif %}
+
+        {% if object.cheese is True and object.onion is True and object.tomato is False%}
+        <td>Cheese, Onion</td>
+        {% endif %}
+
+        {% if object.cheese is True and object.onion is False and object.tomato is True%}
+        <td>Cheese, Tomato</td>
+        {% endif %}
+
+        {% if object.cheese is False and object.onion is True and object.tomato is True%}
+        <td>Onion, Tomato</td>
+        {% endif %}
+
+        {% if object.tomato is True and object.onion is True and object.cheese%}
+        <td>Cheese, Onion, Tomato</td>
+        {% endif %}
+
+        {% if object.cheese is not True and object.onion is not True and object.tomato is not True %}
+        <td>No Extra Toppings</td>
+        {% endif %}
+
+        <td>{{ topping.price }}</td>
+    
+   </tr>
+</table>
 <h3 class="text-success">Your {{ object.pizza }} is on the way :)</h3>
-<p><a href = "{% url 'home' %}">Buy More Pizzas</a> | <a href ="{% url 'home' %}">Back to home</a></p>
+<p><a href = "{% url 'home' %}">Buy More Pizzas</a> | <a href ="{% url 'home' %}">Done</a></p>
+
 
 {% endblock content %}

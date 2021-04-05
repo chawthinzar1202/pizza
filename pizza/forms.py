@@ -7,3 +7,4 @@ class PizzaCreate(ModelForm):
     class Meta:
         model = Topping
         fields = ('pizza', 'cheese', 'onion', 'tomato', 'price', 'image_url')
+

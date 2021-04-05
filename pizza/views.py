@@ -4,8 +4,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls import reverse_lazy
 from .forms import PizzaCreate
-from .models import Pizza, Topping
-
+from .models import Pizza, Topping ,Customer
 
 class Homepage(ListView):
     model = Topping
@@ -53,3 +52,4 @@ class DeletePizza(LoginRequiredMixin, DeleteView):
 class Buypage(DetailView):
     model = Topping
     template_name = 'buy.html'
+
